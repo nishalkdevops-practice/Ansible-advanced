@@ -1,0 +1,17 @@
+- name: demo on parallelism 
+  hosts: nginx
+  become: yes 
+
+  tasks: 
+  - name: To install nginx on child servers
+    ansible.builtin.yum: 
+      name: nginx
+      state: installed 
+
+  - name: To run nginx
+    ansible.builtin.service: 
+      name: nginx
+      state: started
+
+
+      

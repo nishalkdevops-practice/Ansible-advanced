@@ -23,7 +23,7 @@ pipeline {
 
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'npm install'
             }
         }
     
@@ -32,6 +32,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing happening"
+            }
+        }
+
+        stage('sonar-scan') {
+            steps {
+                
+                sh ls -lrt
+                sh "sonar-scanner"
             }
         }
 

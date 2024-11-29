@@ -8,3 +8,15 @@ pipeline {
         }
     }
 }
+
+        stage('Test') {
+            steps {
+                echo "Testing happening"
+            }
+        }
+
+        stage('deploy') {
+            steps {
+                echo "Deployed successfully"
+            }
+        }

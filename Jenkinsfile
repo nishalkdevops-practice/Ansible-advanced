@@ -23,8 +23,11 @@ pipeline {
 
         stage('build') {
             steps {
-                sh 'ls -lrt'
-                sh 'sudo npm install'
+                sh """
+                    sudo yum update -y
+                    sudo yum install nodejs npm -y
+
+                   """
             }
         }
     

@@ -23,6 +23,7 @@ pipeline {
 
         stage('build') {
             steps {
+                sh 'ls -lrt'
                 sh 'sudo npm install'
             }
         }
@@ -38,7 +39,7 @@ pipeline {
         stage('sonar-scan') {
             steps {
 
-                sh ls -lrt
+                sh 'ls -lrt'
                 sh 'sonar-scanner'
             }
         }

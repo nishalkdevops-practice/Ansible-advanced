@@ -1,6 +1,13 @@
 pipeline {
     agent { node { label 'Agent-1'} }
     stages {
+
+        stage('Trigger') {
+            steps {
+                echo "Trigger from git with webhook setup"
+            }
+        }
+
         stage('build') {
             steps {
                 sh 'mvn --version'
@@ -20,6 +27,8 @@ pipeline {
                 echo "Deployed successfully"
             }
         }
+
+
     }
 
     post{

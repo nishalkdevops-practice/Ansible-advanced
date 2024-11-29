@@ -6,8 +6,8 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-    }
-}
+    
+
 
         stage('Test') {
             steps {
@@ -20,3 +20,5 @@ pipeline {
                 echo "Deployed successfully"
             }
         }
+    }
+}
